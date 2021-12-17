@@ -6,7 +6,7 @@
 
 html {
     font-size: 100%;
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Julius Sans One', sans-serif;
 }
 
 i {
@@ -30,7 +30,7 @@ i {
 .main-title {
     padding: 2rem 0;
     font-size: 4rem;
-    font-weight: 300;
+    font-weight: 900;
     text-align: center;
     color: rgba(255, 255, 255, 0.623);
     text-transform: uppercase;
@@ -114,4 +114,8 @@ i {
 
 .todo-list__item > i.red {
     color: red;
+}
+
+.done {
+    text-decoration: line-through;
 }
