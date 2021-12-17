@@ -22,8 +22,8 @@
 
             <div class="input-container">
                 <i class="far fa-edit"></i>
-                <input v-model="todos.text" placeholder="Enter your next task" type="text" name="" id="">
-                <i class="fas fa-plus-circle"></i>
+                <input v-model="newTask" @keyup.enter="addTask" placeholder="Enter your next task" type="text" name="" id="">
+                <i @click="addTask" class="fas fa-plus-circle"></i>
             </div>
 
             <nav class="nav-task">
@@ -38,12 +38,12 @@
 
             <div class="todo-list">
                 <ul class="todo-list__list">
-                    <li v-for="todo in todos" class="todo-list__item">
+                    <li v-for="(todo, index) in todos" class="todo-list__item">
                         <div class="task">
                             <i class="fas fa-check"></i>
-                            <span :class="todo.done == true? 'done' : ''">{{todo.text}}</span> 
+                            <span :class="todo.done == true ? 'done' : ''">{{todo.text}}</span> 
                         </div>
-                        <i class="fas fa-times red"></i>
+                        <i @click="deleteTask(index)" class="fas fa-times red"></i>
                     </li>
                     
                 </ul>
