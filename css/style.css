@@ -3,3 +3,54 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+html {
+    font-size: 100%;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(180deg, rgba(27,95,183,1) 0%, rgba(48,147,231,1) 100%);
+}
+
+.inner-container {
+    width: 70%;
+    height: 70%;
+    margin: 0 auto;
+}
+
+.main-title {
+    padding: 2rem 0;
+    font-size: 4rem;
+    font-weight: 300;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.623);
+    text-transform: uppercase;
+}
+
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    background-color: white;
+    border-radius: 3px;
+}
+
+.input-container > i {
+    margin: 0 2rem;
+    font-size: 2rem;
+    color: #258af0;
+}
+
+.input-container > input {
+    width: calc(100% - 12rem);
+    height: 80%;
+    border: none;
+    outline: none;
+    font-size: 1.3rem;
+    caret-color: #258af0;
+}
