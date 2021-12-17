@@ -21,18 +21,20 @@
             <h1 class="main-title">Vue todo list</h1>
 
             <div class="input-container">
-                <i class="far fa-edit"></i>
-                <input v-model="newTask" @keyup.enter="addTask()" placeholder="Enter your next task" type="text" name="" id="">
-                <i @click="addTask()" class="fas fa-plus-circle"></i>
+                <div class="my-task">
+                    <i class="far fa-edit"></i>
+                    <input v-model="newTask" @keyup.enter="addTask()" placeholder="Enter your next task" type="text" name="" id="">
+                </div>
+                <i v-if="newTask != ''" @click="addTask()" class="fas fa-plus-circle"></i>
             </div>
 
             <nav class="nav-task">
                 <i class="fas fa-tasks opacity"></i>
 
                 <div class="nav-task__select">
-                    <span>Todo</span>
-                    <span>Done</span>
-                    <span>All</span>
+                    <span @click="todoFilter(true)">Todo</span>
+                    <span @click="todoFilter(false)">Done</span>
+                    <span @click="todoFilter(null)">All</span>
                 </div>
             </nav>
 
@@ -40,7 +42,8 @@
                 <ul class="todo-list__list">
                     <li v-for="(todo, index) in todos" class="todo-list__item">
                         <div class="task">
-                            <i @click="done(index)" class="fas fa-check opacity"></i>
+                            <i v-if="todo.done" @click="done(index)" class="fas fa-check-double opacity"></i>
+                            <i v-else="todo.done" @click="done(index)" class="fas fa-check opacity"></i>
                             <span :class="todo.done == true ? 'done' : ''">{{todo.text}}</span> 
                         </div>
                         <i @click="deleteTask(index)" class="fas fa-times red"></i>
