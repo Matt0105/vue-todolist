@@ -24,13 +24,20 @@ const app = new Vue(
             },
 
             addTask() {
-                let newTodo = {
-                    text: this.newTask,
-                    done: false
-                }
+                if(this.newTask != "") {
 
-                this.todos.unshift(newTodo);
-                this.newTask = "";
+                    let newTodo = {
+                        text: this.newTask,
+                        done: false
+                    }
+    
+                    this.todos.unshift(newTodo);
+                    this.newTask = "";
+                }
+            },
+
+            done(index) {
+                this.todos[index].done = !this.todos[index].done;
             }
         },
         

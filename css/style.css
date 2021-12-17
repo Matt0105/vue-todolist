@@ -70,7 +70,7 @@ i {
     background-color: white;
 }
 
-.nav-task > i.opacity {
+.opacity {
     opacity: 0.4;
 }
 
@@ -115,6 +115,11 @@ i {
 .todo-list__item > i.red {
     cursor: pointer;
     color: red;
+}
+
+.task > i:hover {
+    opacity: 1;
+    cursor: pointer;
 }
 
 .done {
